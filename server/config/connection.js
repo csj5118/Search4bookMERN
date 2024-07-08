@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/googlebooks');
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://shekki7798:!Cooper22!@merncluster.iej6lzs.mongodb.net/?retryWrites=true&w=majority&appName=MernCluster';
+
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 module.exports = mongoose.connection;
